@@ -33,6 +33,7 @@ def delete(position: int):
 
 @app.command()
 def update(position: int, task: str = None, category: str = None):
+    category = category.capitalize()
     typer.echo(f"updating {position}")
     update_todo(position - 1, task, category)
     show()
