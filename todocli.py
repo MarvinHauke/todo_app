@@ -16,6 +16,7 @@ app = typer.Typer()
 
 @app.command(short_help="adds an item")
 def add(task: str, category: str):
+    category = category.capitalize()
     typer.echo(f"adding {task}, {category}")
     todo = Todo(task, category)
     insert_todo(todo)
